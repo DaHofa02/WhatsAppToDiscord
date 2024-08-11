@@ -62,7 +62,7 @@ const connectToWhatsApp = async (retry = 1) => {
                 const [nMsgType, message] = utils.whatsapp.getMessage(rawMessage, messageType);
                 state.dcClient.emit('whatsappMessage', {
                     id: utils.whatsapp.getId(rawMessage),
-                    name: utils.whatsapp.getSenderName(rawMessage),
+                    name: 'BeyondUS Whatsapp',
                     content: utils.whatsapp.getContent(message, nMsgType, messageType),
                     quote: utils.whatsapp.getQuote(message),
                     file: await utils.whatsapp.getFile(rawMessage, messageType),
